@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marcus Quitiquit</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header-container" id="header">        
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/Logo.png" alt="Logo">
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#project">Project</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>        
+        <div class="header-content">
+            <div class="header-text">
+                <p>Software Developer</p>
+                <h1>
+                    Hello, My name is 
+                    <br>
+                    <span>Marcus Quitiquit</span>
+                </h1>
+            </div>
+            <div class="header-image">
+                <img src="images/imagejpeg_0.jpg" alt="ME">
+            </div>
+        </div>
+    </header>
+    <div class="about-me-container" id="about">
+        <div class="about-me">
+            <img src="images/mypicture.jpg" alt="My Profile">
+            <div class="about-me-text">
+                <h1 class="head">About Me</h1>
+                <p>
+                    My name is Marcus Quitiquit. I am pursuing a career in software development and analysis. I want to further
+                    enhance my problem-solving and programming skills to develop my own projects in the future.
+                </p>
+                <div class="titles">
+                    <p class="sub-titles action" onclick="opentab('skills')">Skills</p>
+                    <p class="sub-titles" onclick="opentab('education')">Education</p>
+                    <p class="sub-titles" onclick="opentab('resume')">Resume</p>
+                </div>
+                <div class="contents active" id="skills">
+                    <ul>
+                        <li><span>Front End</span><br>Html, CSS, JS</li>
+                        <li><span>Back End</span><br>PHP, MySQL</li>
+                        <li><span>Computer Languages</span><br>C#, Java, Python</li>
+                        <li><span>Frameworks</span><br>.NET, ASP.NET, Xampp</li>
+                        <li><span>Methologies</span><br>Agile Software Development, Scrum, Object-Oriented Programming (OOP)</li>
+                    </ul>
+                </div>
+                <div class="contents" id="education">
+                    <ul>
+                        <li><span>2022-2023</span><br>Computer Programming and Analysis, Advanced Diploma</li>
+                    </ul>
+                </div>
+                <div class="contents" id="resume">
+                    <ul>
+                        <div class="resume-image">
+                            <img src="images/Resume.png" alt="My Resume">
+                        </div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="project-container project-animation" id="project">
+        <div class="project">
+            <h1>Personal Projects</h1>
+            <p>Project #1:</p>
+            <h2>Who wants to be a millionaire</h2>
+            <img src="images/image_1.jpg" alt="millionaire logo">
+            <br>
+            <a href="https://github.com/Marcq04/Who-Wants-to-be-a-Millionaire" class="btn btn-primary">View</a>
+        </div>
+    </div>
+    <footer class="footer-container" id="contact">
+        <div class="contact-info-container">
+            <div class="contact-info-left">
+                <h2>My Contacts</h2>
+                <p>Email: quitiquit04@gmail.com <i class="fas fa-envelope"></i></p>
+                <p>Phone: 647-771-2984 <i class="fas fa-phone"></i></p>
+                <a href="https://www.linkedin.com/in/marcus-quitiquit/"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/Marcq04"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <div class="contact-info-right">
+                <form>
+                    <h2>Contact Me</h2>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </form>
+            </div>
+        </div>
+    </footer>       
+    <script>
+        var subtitles = document.getElementsByClassName("sub-titles");
+        var contents = document.getElementsByClassName("contents");
+    
+        function opentab(name) {
+            for (subtitle of subtitles) {
+                subtitle.classList.remove("action");
+            }
+            for (content of contents) {
+                content.classList.remove("active");
+            }
+            event.currentTarget.classList.add("action");
+            document.getElementById(name).classList.add("active");
+    
+            // Reset animation by reapplying animation classes after a slight delay
+            setTimeout(function() {
+                var projectContainer = document.getElementById("project");
+                projectContainer.classList.remove("project-animation");
+                void projectContainer.offsetWidth; // Trigger reflow to restart the animation
+                projectContainer.classList.add("project-animation");
+            }, 100);
+        }
+    </script>    
+</body>
+</html>

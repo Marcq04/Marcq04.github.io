@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Resetting default browser styles */
+body {
+    background-color: white;
+    color: black;
+}
+
+.header-container {
+    padding: 10px 10%;
+}
+
+/* Styling the navbar */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.logo {
+    /* Adjust the width of the logo as needed */
+    width: 140px;
+}
+
+.navbar {
+    background-color: #fff; /* Set navbar color to blue */
+    padding: 10px 10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.nav-links ul {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links ul li {
+    margin: 10px 20px;
+}
+
+.nav-links ul li a {
+    color: #f08103;
+    text-decoration: none;
+    font-size: 20px;
+    position: relative;
+}
+
+.nav-links ul li a::after {
+    content: ' ';
+    width: 0;
+    height: 3px;
+    background: #f19305;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+.nav-links ul li a:hover::after {
+    width: 100%;
+}
+
+.header-content {
+    margin-top: 5%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-content h1 {
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-content h1 span {
+    color: red;
+}
+
+.header-text {
+    flex: 1; /* Take remaining space */
+}
+
+.header-image {
+    flex-shrink: 0; /* Do not shrink */
+    margin-left: 20px; /* Add margin for spacing */
+    max-width: 40%; /* Adjust the max width as needed */
+    margin-right: 40px;
+}
+
+.about-me-container {
+    background-color: #dee6f5; /* Set background color for About Me section */
+    padding: 20px 10%; /* Adjust padding as needed */
+}
+
+.about-me {
+    display: flex;
+    align-items: center;
+}
+
+.about-me img {
+    width: 200px; /* Adjust image width as needed */
+    margin-right: 20px; /* Adjust margin as needed */
+}
+
+.about-me-text {
+    flex: 1; /* Take remaining space */
+}
+
+.about-me-text h1 {
+    margin-bottom: 10px; /* Adjust margin as needed */
+}
+
+.about-me-text p {
+    margin-bottom: 5px; /* Adjust margin as needed */
+    color: black; /* Set text color */
+}
+
+.about-me-text p span {
+    font-weight: bold; /* Make span text bold */
+    margin-right: 5px; /* Adjust margin as needed */
+    color: black;
+}
+
+.head {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.titles {
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.sub-titles {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.sub-titles::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.sub-titles.action::after {
+    width: 50%;
+}
+
+.contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.contents ul li span {
+    color: blue;
+    font-size: 14px;
+}
+
+.contents {
+    display: none;
+}
+
+.contents.active {
+    display: block;
+}
+
+.resume-image img {
+    width: 45%; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    max-width: none; /* Remove the max-width restriction */
+}
+
+.project-container {
+    background-color: #f8f9fa; /* Set background color for Project section */
+    padding: 20px 10%; /* Adjust padding as needed */
+}
+
+.project {
+    margin-top: 20px; /* Adjust margin as needed */
+    padding: 20px;
+}
+
+.project h2 {
+    color: gold;
+}
+
+.project img {
+    width: 45%;
+    height: auto;
+    max-width: none;
+    padding: 10px 10px;
+    position: relative;
+}
+
+.project a {
+    width: 100px;
+    height: 50px;
+    padding: 10px 10px;
+    position: relative;
+}
+
+.project-animation {
+    animation: none; /* Reset animation */
+    animation: slideFromBottom 1s ease-in-out; /* Apply animation */
+}
+
+/*-----Contact Info-----*/
+
+.footer-container {
+    background-color: rgb(0, 0, 0); /* Set the background color to black */
+    padding: 20px;
+    color: white; /* Add color property to change the text color to white */
+}
+
+.contact-info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items to the top */
+}
+
+.contact-info-left {
+    flex-basis: 35%;
+    text-align: left;
+}
+
+.contact-info-left p {
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.contact-info-right {
+    flex-basis: 60%;
+    text-align: left; /* Align the form elements to the left */
+}
+
+.contact-info-right form {
+    width: 100%;
+}
+
+form input, form textarea {
+    width: calc(100% - 30px); /* Adjusted width to accommodate margins */
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+button.btn {
+    margin: 15px;
+    width: 15%;
+    height: auto;
+}
+
+/*CSS for Animations*/
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.header-content {
+    margin-top: 5%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideFromLeft 1s ease-in-out;
+}
+
+.header-image {
+    flex-shrink: 0; /* Do not shrink */
+    margin-left: 20px; /* Add margin for spacing */
+    max-width: 40%; /* Adjust the max width as needed */
+    margin-right: 40px;
+    animation: slideFromRight 1s ease-in-out;
+}
+
+/*About Me*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.about-me-container {
+    background-color: #dee6f5; /* Set background color for About Me section */
+    padding: 20px 10%; /* Adjust padding as needed */
+    animation: fadeIn 1s ease-in-out;
+}
+
+.about-me-container.fade-out {
+    animation: fadeOut 1s ease-in-out;
+}
+
+/*Project*/
+@keyframes slideFromBottom {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.project-container {
+    background-color: #f8f9fa; /* Set background color for Project section */
+    padding: 20px 10%; /* Adjust padding as needed */
+    animation: slideFromBottom 1s ease-in-out;
+}
+
+
+/*CSS for Small Screens*/
+@media only screen and (max-width: 600px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .header-image {
+        margin: 20px 0;
+    }
+    
+    .about-me {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .about-me img {
+        margin: 0 auto 20px;
+    }
+    
+    .about-me-text {
+        text-align: center;
+    }
+    
+    .titles {
+        flex-direction: column;
+    }
+    
+    .sub-titles {
+        margin: 0 0 10px;
+    }
+    
+    .contents ul li {
+        margin-bottom: 10px;
+    }
+    
+    .project img {
+        width: 100%;
+    }
+    
+    .contact-info-container {
+        flex-direction: column;
+    }
+    
+    .contact-info-left,
+    .contact-info-right {
+        flex-basis: 100%;
+        text-align: center;
+    }
+    
+    form input,
+    form textarea,
+    button.btn {
+        width: 100%;
+    }
+}
