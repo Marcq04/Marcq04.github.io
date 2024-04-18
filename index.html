@@ -7,6 +7,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script type="text/javascript"></script>
 </head>
 <body>
     <header class="header-container" id="header">        
@@ -95,11 +97,11 @@
                 <a href="https://github.com/Marcq04"><i class="fab fa-github"></i> GitHub</a>
             </div>
             <div class="contact-info-right">
-                <form>
+                <form method="post" onsubmit="sendEmail(); reset(); return false;">
                     <h2>Contact Me</h2>
-                    <input type="text" name="Name" placeholder="Your Name" required>
-                    <input type="email" name="Email" placeholder="Your Email" required>
-                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <input type="text" id="name" name="Name" placeholder="Your Name" required>
+                    <input type="email" id="email" name="Email" placeholder="Your Email" required>
+                    <textarea id="message" name="Message" rows="6" placeholder="Your Message"></textarea>
                     <button type="submit" class="btn btn-success">Submit</button>
                 </form>
             </div>
@@ -126,6 +128,26 @@
                 void projectContainer.offsetWidth; // Trigger reflow to restart the animation
                 projectContainer.classList.add("project-animation");
             }, 100);
+        }
+
+        function sendEmail() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+        
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "quitiquit04@gmail.com",
+                Password: "magnus0427",
+                To: 'quitiquit04@gmail.com',
+                From: email,
+                Subject: "Message from " + name,
+                Body: message,
+            }).then(function (message) {
+                alert("Mail sent successfully");
+            }).catch(function(error) {
+                alert("Error: " + error);
+            });
         }
     </script>    
 </body>
